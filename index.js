@@ -32,6 +32,15 @@ function sum(nums)
    return total;
 }
 
+function sumAlt(nums)
+{
+   nums=nums.reduce(function(total,element) 
+    {
+        return element+total;
+    },0);
+    return nums;
+}
+
 function multiply(nums)
 {
     var output=1;
@@ -41,6 +50,16 @@ function multiply(nums)
    }
    return output;
 }
+
+function multiplyAlt(nums)
+{
+    nums=nums.reduce(function(total,element) 
+    {
+        return element*total;
+    },1);
+    return nums;
+}
+
 
 function reverse(s)
 { 
@@ -77,6 +96,16 @@ function filterLongWords(words,i)
     }
 
     return filteredWords;  
+}
+
+function filterLongWordsAlt(words,n)
+{
+    words=words.filter(function(element,i,array)
+    {
+        return element.length>n;
+    });
+
+    return words;  
 }
 
 function myFunctionTest(expectedVal, testfn)
@@ -116,6 +145,9 @@ document.writeln(d3);
 //console.log(reverse("test data"));
 //console.log(findLongestWord(["apple","orange","bee","hon"]));
 //console.log(filterLongWords(["apple","orange","bee","hon"],4));
+//console.log(sumEff([1,2,3,4,5]));
+//console.log(multiplyEff([1,2,3,4,5]));
+//console.log(filterLongWordsAlt(["apple","orange","bee","hon"],4));
 
 console.log("Expected output of max(20,10) is 20 and  " +
    myFunctionTest(20, function(){return max( 20, 10);} )); 
@@ -129,8 +161,14 @@ console.log("Expected output of isVowel('A') is true and  " +
 console.log("Expected output of sum([1,2,3,4]) is 10 and  " +
    myFunctionTest(10, function(){return sum([1,2,3,4]);} )); 
 
+console.log("Expected output of sumAlt([1,2,3,4]) is 10 and  " +
+   myFunctionTest(10, function(){return sumAlt([1,2,3,4]);} )); 
+
 console.log("Expected output of multiply([1,2,3,4]) is 24 and  " +
    myFunctionTest(24, function(){return multiply([1,2,3,4]);} )); 
+
+console.log("Expected output of multiplyAlt([1,2,3,4]) is 24 and  " +
+   myFunctionTest(24, function(){return multiplyAlt([1,2,3,4]);} )); 
 
 console.log("Expected output of reverse(\"test data\") is (\"atad tset\") and  " +
    myFunctionTest("atad tset", function(){return reverse("test data");} )); 
@@ -140,5 +178,8 @@ console.log("Expected output of findLongestWord([\"apple\",\"orange\",\"bee\",\"
 
 console.log("Expected output of filterLongWords([\"apple\",\"orange\",\"bee\",\"hon\"],4) is [\"apple\",\"orange\"]] and  " +
    myFunctionTest(["apple","orange"], function(){return filterLongWords(["apple","orange","bee","hon"],4);} )); 
+
+console.log("Expected output of filterLongWordsAlt([\"apple\",\"orange\",\"bee\",\"hon\"],4) is [\"apple\",\"orange\"]] and  " +
+   myFunctionTest(["apple","orange"], function(){return filterLongWordsAlt(["apple","orange","bee","hon"],4);} ));
 
 
