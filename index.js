@@ -84,7 +84,7 @@ function myFunctionTest(expectedVal, testfn)
    if(JSON.stringify(testfn())==JSON.stringify(expectedVal))
         return "TEST SUCCEEDED";
     else
-        return "TEST FAILED";
+        return "TEST FAILED. Expected "+JSON.stringify(testfn())+" found "+ JSON.stringify(testfn());
 }
 
 
@@ -115,7 +115,7 @@ document.writeln(d3);
 //console.log(multiply([1,2,3,4]));
 //console.log(reverse("test data"));
 //console.log(findLongestWord(["apple","orange","bee","hon"]));
-console.log(filterLongWords(["apple","orange","bee","hon"],4));
+//console.log(filterLongWords(["apple","orange","bee","hon"],4));
 
 console.log("Expected output of max(20,10) is 20 and  " +
    myFunctionTest(20, function(){return max( 20, 10);} )); 
