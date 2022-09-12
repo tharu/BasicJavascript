@@ -71,6 +71,17 @@ function reverse(s)
     return output;
 }
 
+
+function reverseAlt(s)
+{
+    var chars= s.split('');    
+    var reversed=chars.reduce((previousValue, currentValue,currentIndex) => 
+    { 
+         return previousValue+chars[s.length-1-currentIndex];
+    },"");
+    return reversed;
+}
+
 function findLongestWord(words)
 {
     let longestWord="";
@@ -148,6 +159,8 @@ document.writeln(d3);
 //console.log(sumEff([1,2,3,4,5]));
 //console.log(multiplyEff([1,2,3,4,5]));
 //console.log(filterLongWordsAlt(["apple","orange","bee","hon"],4));
+//console.log(reverse("test data"));
+
 
 console.log("Expected output of max(20,10) is 20 and  " +
    myFunctionTest(20, function(){return max( 20, 10);} )); 
@@ -172,6 +185,9 @@ console.log("Expected output of multiplyAlt([1,2,3,4]) is 24 and  " +
 
 console.log("Expected output of reverse(\"test data\") is (\"atad tset\") and  " +
    myFunctionTest("atad tset", function(){return reverse("test data");} )); 
+
+console.log("Expected output of reverseAlt(\"test data\") is (\"atad tset\") and  " +
+   myFunctionTest("atad tset", function(){return reverseAlt("test data");} )); 
 
 console.log("Expected output of findLongestWord([\"apple\",\"orange\",\"bee\",\"hon\"]) is \"orange\" and  " +
    myFunctionTest("orange", function(){return findLongestWord(["apple","orange","bee","hon"]);} )); 
