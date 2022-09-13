@@ -22,21 +22,28 @@
   <script>
     
 
-    describe("add", function(){
-        it("adds the first parameter to the second parameter and returns the value", function(){
-           assert.equal(add(1,1), 2); 
+    describe("sum", function(){
+        it("add multiple numbers", function(){
+           assert.equal(sumAlt([1,2,3]), 6); 
         });
     });
 
-    describe("add", function(){
-        it("subtracts the first parameter from the second parameter", function(){
-           assert.equal(add(1,1), 0); 
+    describe("multiply", function(){
+        it("multiply the given numbers", function(){
+           assert.equal(multiplyAlt([1,2,3]), 6); 
         });
     });
+
+    describe("reverse", function(){
+        it("reverse a string", function(){
+           assert.equal(reverseAlt("test data"), "atad tset"); 
+        });
+    });
+    
   </script>
 
   <!-- the script with tests (describe, it...) -->
-  <script src="test.js"></script>
+  <script src="index.js"></script>
 
   <!-- the element with id="mocha" will contain test results -->
   <div id="mocha"></div>
